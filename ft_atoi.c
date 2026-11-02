@@ -6,7 +6,7 @@
 /*   By: artbaudo <artbaudo@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 11:02:51 by artbaudo          #+#    #+#             */
-/*   Updated: 2026/11/02 11:22:11 by artbaudo         ###   ########.fr       */
+/*   Updated: 2026/11/02 16:03:13 by artbaudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_atoi(const char *str)
 
 	i = 0;
 	sign = 1;
-	res =  0;
-	while (str[i] >= '\t' && str[i] <= '\r' || str[i] == ' ')
+	res = 0;
+	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{

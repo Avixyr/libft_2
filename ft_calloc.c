@@ -6,7 +6,7 @@
 /*   By: artbaudo <artbaudo@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 11:34:47 by artbaudo          #+#    #+#             */
-/*   Updated: 2026/11/02 12:09:55 by artbaudo         ###   ########.fr       */
+/*   Updated: 2026/11/02 15:23:18 by artbaudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 // int	main(void)
 // {
-	
 // 	printf("ok %p\n", calloc(3, 10));
 // 	printf("ik %p\n", ft_calloc(3, 10));
 // 	return (0);

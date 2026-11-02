@@ -6,7 +6,7 @@
 /*   By: artbaudo <artbaudo@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 12:19:49 by artbaudo          #+#    #+#             */
-/*   Updated: 2026/11/02 12:41:48 by artbaudo         ###   ########.fr       */
+/*   Updated: 2026/11/02 15:20:58 by artbaudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 // {
 // 	char	*s = "cPaca";
 // 	printf("%c\n", -110000);
-// 	printf("memchr = %s\nft_memchr = %s\n", (char *)memchr((void *)s, -110000, 5),  (char *)ft_memchr((void *)s, -110000, 5));
+// 	printf("memchr = %s\n, (char *)memchr((void *)s, -110000, 5));
+//	printf("ft_memchr = %s\n",  (char *)ft_memchr((void *)s, -110000, 5));
 // 	return (0);
 // }
