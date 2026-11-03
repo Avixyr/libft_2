@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int ft_nblen(int n)
+static int	ft_nblen(int n)
 {
 	int	len;
 
@@ -20,7 +20,7 @@ static int ft_nblen(int n)
 	while (n > 10 || n < -10)
 	{
 		len++;
-		n = n /10;
+		n = n / 10;
 	}
 	return (len);
 }
@@ -48,7 +48,7 @@ char	*ft_itoa(int n)
 		res[0] = '-';
 	while (len-- > 0)
 	{
-		res[len  + sign] = buff % 10 + '0';
+		res[len + sign] = buff % 10 + '0';
 		buff = buff / 10;
 	}
 	return (res);

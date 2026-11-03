@@ -12,58 +12,53 @@
 
 #include "libft.h"
 
-static int	ft_count_trim(char const *s1, char const *set)
+int	ft_charinset(char c, char const *set)
 {
-	int		i;
-	int		j;
-	int		trim_count;
+	int	i;
 
 	i = 0;
-	trim_count = 0;
-	while (s1[i])
+	while (set[i])
 	{
-		j = 0;
-		while (set[j])
-		{
-			if (s1[i] == set[j])
-			{
-				trim_count++;
-				break ;
-			}
-			j++;
-		}
+		if (set[i] == c)
+			return (1);
 		i++;
 	}
-	return (trim_count);
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*trim;
-	int		i;
-	int		j;
-	int		k;
+	size_t	i;
+	size_t	start;
+	size_t	end;
+	char	*s;
 
-	trim = malloc(ft_strlen(s1) - ft_count_trim(s1, set) + 1);
-	if (!trim)
+	if (!s1)
 		return (0);
 	i = 0;
-	k = 0;
-	while (s1[i])
+	start = 0;
+	end = ft_strlen(s1);
+	while (ft_charinset(s1[start], set) == 1 && s1[start])
+		start++;
+	while (ft_charinset(s1[end - 1], set) == 1 && end > start)
+		end--;
+	s = malloc(end - start + 1);
+	if (!s)
+		return (0);
+	while (s1[start] && start < end)
 	{
-		j = 0;
-		while (set[j] && set[j] != s1[i])
-			j++;
-		if (set[j] != s1[i])
-		{
-			trim[k] = s1[i];
-			k++;
-		}
+		s[i] = s1[start];
 		i++;
+		start++;
 	}
-	return (trim);
+	s[i] = '\0';
+	return (s);
 }
 // int	main(void)
 // {
-// 	printf("%s\n",ft_strtrim("0123465789", "09jn2a9w2d"));
+// 	char	*s;
+
+// 	s = ft_strtrim("ababa", "a");
+// 	printf("%s\n",s);
+// 	free(s);
 // }

@@ -17,6 +17,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*sub;
 	unsigned int	i;
 
+	if (start >= ft_strlen(s))
+		return (ft_calloc(1, 1));
+	if (len + start > ft_strlen(s))
+		len = ft_strlen(s) - start;
 	sub = malloc(len + 1);
 	if (!sub)
 		return (0);
@@ -32,6 +36,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 // int	main(void)
 // {
-// 	char s[] = "0123456";
-// 	printf("%s\n", ft_substr(s, 3, 2));
+// 	char s[] = "tripouille";
+// 	printf("%s\n", ft_substr(s, 100, 1));
 // }

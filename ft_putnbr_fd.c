@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int 	buff;
+	unsigned int	buff;
 
 	buff = n;
 	if (n < 0)
@@ -22,7 +22,7 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, "-", 1);
 		buff = -buff;
 	}
-	if ( buff >= 10)
+	if (buff >= 10)
 		ft_putnbr_fd(buff / 10, fd);
 	ft_putchar_fd(buff % 10 + '0', fd);
 }

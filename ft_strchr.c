@@ -17,15 +17,17 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while (s[i] && s[i] != c)
+	while (s[i] && s[i] != (char)c)
 		i++;
-	if (c == s[i])
+	if ((char)c == s[i])
 		return ((char *)s + i);
 	return (0);
 }
 // int	main(void)
 // {
-// 	printf("strchr = %s\n", strchr("abcdef",'g'));
-// 	printf("ft_strchr = %s\n",ft_strchr("abcdef",'g'));
+// 	char s[] = "tripouille";
+
+// 	printf("strchr = %s\n", strchr(s, 't' + 256));
+// 	printf("ft_strchr = %s\n",ft_strchr(s, 't' + 256));
 // 	return (0);
 // }

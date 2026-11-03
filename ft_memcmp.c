@@ -19,9 +19,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (*(unsigned char *)(s1 + i) <= *(unsigned char *)(s2 + i))
+		if (*(unsigned char *)(s1 + i) < *(unsigned char *)(s2 + i))
 			return (-1);
-		else if (*(unsigned char *)(s1 + i) >= *(unsigned char *)(s2 + i))
+		else if (*(unsigned char *)(s1 + i) > *(unsigned char *)(s2 + i))
 			return (1);
 		i++;
 	}
@@ -30,7 +30,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 // int	main(void)
 // {
-// 	printf("memcmp = %d\n", memcmp("cac","cae",10));
-// 	printf("ft_memcmp = %d\n", ft_memcmp("cac","cae",10));
+// 	printf("memcmp = %d\n", memcmp("caca","caca",2));
+// 	printf("ft_memcmp = %d\n", ft_memcmp("caca","caca",2));
 // 	return (0);
 // }
