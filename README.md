@@ -26,8 +26,6 @@ make
 
 This should produce the static archive `libft.a`. To remove object files, run `make clean`; to remove both object files and the archive, run `make fclean`. Run `make re` to clean and rebuild.
 
-> **Current build note:** the Makefile enables `-Werror`, and `ft_lstlast.c` currently contains an assigned-but-unused local variable. Compilers that report this warning will stop the build until it is addressed.
-
 ### Use the library
 
 Include `libft.h` in your C source and link the archive when compiling. For example:
