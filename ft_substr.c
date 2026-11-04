@@ -15,21 +15,22 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*sub;
-	unsigned int	i;
+	size_t	i;
 
 	if (start >= ft_strlen(s))
 		return (ft_calloc(1, 1));
-	if (len + start > ft_strlen(s))
+	if (len > ft_strlen(s) - start)
 		len = ft_strlen(s) - start;
 	sub = malloc(len + 1);
+	sub[len]= '\0';
 	if (!sub)
 		return (0);
-	sub[len] = '\0';
 	i = 0;
-	while (s[start + i] && i < len)
+	while (s[start] && i < len)
 	{
-		sub[i] = s[start + i];
+		sub[i] = s[start];
 		i++;
+		start++;
 	}
 	return (sub);
 }
@@ -37,5 +38,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // int	main(void)
 // {
 // 	char s[] = "tripouille";
-// 	printf("%s\n", ft_substr(s, 100, 1));
+// 	char	*x;
+
+// 	x =  ft_substr(s,5, SIZE_MAX);
+// 	printf("%s\n",x);
+// 	free(x);
 // }

@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	sign;
-	int	res;
-	int	i;
+	int				sign;
+	unsigned int	res;
+	int				i;
 
 	i = 0;
 	sign = 1;
@@ -31,7 +31,7 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res = res * 10 + str[i] - '0';
+		res = str[i] - '0' + res * 10;
 		i++;
 	}
 	return (res * sign);
@@ -39,7 +39,9 @@ int	ft_atoi(const char *str)
 
 // int	main(void)
 // {
-// 	printf("ft_atoi = %d\n",ft_atoi("	 -42"));
 // 	printf("atoi = %d\n",atoi(" 	-42"));
+// 	printf("ft_atoi = %d\n",ft_atoi("	 -42"));
+// 	printf("ft_atoi = %d\n",ft_atoi("	 2147483647"));
+// 	printf("ft_atoi = %d\n",ft_atoi("	 -2147483648"));
 // 	return (0);
 // }

@@ -15,36 +15,40 @@
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	j;
 	size_t	len_d;
 	size_t	len_s;
+	size_t	res;
+
 
 	len_s = ft_strlen(src);
-	len_d = ft_strlen(dest);
+	len_d = 0;
+	while (len_d < size && dest[len_d])
+		len_d++;
+	res = len_s + size;
+	if (size > len_d)
+		res = len_d + len_s;
 	if (size < 1)
 		return (len_s + size);
 	i = 0;
-	j = len_d;
-	while (src[i] && j < size - 1)
+	while (src[i] && len_d < size - 1)
 	{
-		dest[j] = src[i];
+		dest[len_d] = src[i];
 		i++;
-		j++;
+		len_d++;
 	}
-	dest[j] = '\0';
-	if (size > len_d)
-		return (len_d + len_s);
-	return (len_s + size);
+	if (len_d != size)
+		dest[len_d] = '\0';
+	return (res);
 }
 
 // int	main(void)
 // {
-// unsigned int	size = 19;
-// char	src[]="0123456789";
+// unsigned int	size = 1;
+// char	src[]="w";
 // char	dest[155]="hello";
 // char	dest1[155]="hello";
 
-// printf("ft_strlcat  = %zu, %s,\n", ft_strlcat(dest1,src,size),dest1);
-// printf("strlcat = %zu, %s,\n", strlcat(dest,src,size),dest);
+// printf("ft_strlcat = %zu, %s,\n", ft_strlcat(dest1,src,size),dest1);
+// printf("   strlcat = %zu, %s,\n", strlcat(dest,src,size),dest);
 // return (0);
 // }
