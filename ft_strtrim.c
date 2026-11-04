@@ -33,7 +33,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*s;
 
-	if (!s1)
+	if (!s1 || !*s1)
 		return (0);
 	i = 0;
 	start = 0;
